@@ -1,0 +1,6 @@
+content ruyitao chrome/content/
+content ruyitao chrome/content/ contentaccessible=yes
+overlay chrome://browser/content/browser.xul chrome://ruyitao/content/browser.xul
+style chrome://global/content/customizeToolbar.xul chrome://ruyitao/content/toolbar-button.css
+resource ruyitao modules/
+

@@ -1,0 +1,161 @@
+#ruyitao-product-detail-container .ruyitao-srSprite {
+  background: url("http://g-ecx.images-amazon.com/images/G/01/nav2/images/gui/searchSprite._V196227193_.gif");
+}
+#ruyitao-product-detail-container .ruyitao-spr_stars1Active {
+  background-position: -102px 0px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars2Active {
+  background-position: -89px 0px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars3Active {
+  background-position: -75px 0px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars4Active {
+  background-position: -63px 0px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars5Active {
+  background-position: -50px 0px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars1_5Active {
+  background-position: -89px -90px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars2_5Active {
+  background-position: -75px -90px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars3_5Active {
+  background-position: -63px -90px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars4_5Active {
+  background-position: -50px -90px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars1Inactive {
+  background-position: -102px -20px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars2Inactive {
+  background-position: -89px -20px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars3Inactive {
+  background-position: -75px -20px;
+}
+
+#ruyitao-product-detail-container .ruyitao-spr_stars4Inactive {
+  background-position: -63px -20px;
+}
+
+#ruyitao-product-detail-container .ruyitao-newStars {
+  float: left;
+  height: 12px;
+  width: 65px;
+}
+
+#ruyitao-product-detail-container .ruyitao-avs, #ruyitao-product-detail-container .ruyitao-avs5, #ruyitao-product-detail-container .ruyitao-avs4, #ruyitao-product-detail-container .ruyitao-avs3, #ruyitao-product-detail-container .ruyitao-avs2, #ruyitao-product-detail-container .ruyitao-avs1, #ruyitao-product-detail-container .ruyitao-avs45, #ruyitao-product-detail-container .ruyitao-avs35, #ruyitao-product-detail-container .ruyitao-avs25, #ruyitao-product-detail-container .ruyitao-avs15 {
+  background-image: url(http://q.ebaystatic.com/aw/pics/revGuides/sprStars.gif);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0 0;
+  background-color: transparent;
+  height: 20px;
+  display: inline-block;
+  width: 60px;
+  vertical-align: bottom;
+  margin: 0 0 -3px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs5 {
+  background-position: 0 5px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs4 {
+  background-position: 0 -55px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs3 {
+  background-position: 0 -115px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs2 {
+  background-position: 0 -175px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs1 {
+  background-position: 0 -235px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs45 {
+  background-position: 0 -25px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs35 {
+  background-position: 0 -85px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs25 {
+  background-position: 0 -145px
+}
+
+#ruyitao-product-detail-container .ruyitao-avs15 {
+  background-position: 0 -205px
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB0, #ruyitao-product-detail-container .ruyitao-rankB1, #ruyitao-product-detail-container .ruyitao-rankB2, #ruyitao-product-detail-container .ruyitao-rankB3, #ruyitao-product-detail-container .ruyitao-rankB4, #ruyitao-product-detail-container .ruyitao-rankB5, #ruyitao-product-detail-container .ruyitao-rankB6, #ruyitao-product-detail-container .ruyitao-rankB7, #ruyitao-product-detail-container .ruyitao-rankB8, #ruyitao-product-detail-container .ruyitao-rankB9, #ruyitao-product-detail-container .ruyitao-rankB10, #ruyitao-product-detail-container .ruyitao-rankB11 {
+  float: left;
+  padding-left: 85px;
+  height: 16px;
+  background: url(http://c1.neweggimages.com.cn/WebResources/2009/Default/Nest/img/rankB100907.gif) no-repeat left -160px;
+  color: #1e4c9a;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB1 {
+  background-position: 0 -144px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB2 {
+  background-position: 0 -128px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB3 {
+  background-position: 0 -112px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB4 {
+  background-position: 0 -96px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB5 {
+  background-position: 0 -80px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB6 {
+  background-position: 0 -64px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB7 {
+  background-position: 0 -48px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB8 {
+  background-position: 0 -32px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB9 {
+  background-position: 0 -16px;
+}
+
+#ruyitao-product-detail-container .ruyitao-rankB10 {
+  background-position: left top;
+}
+
+#ruyitao-product-detail-container .ruyitao-icon_star, #ruyitao-product-detail-container .ruyitao-icon_star b{background:url(http://st.51buy.com/static_v1/img/header/header_full.png) no-repeat -55px -48px;height:13px;width:75px;}
+#ruyitao-product-detail-container .ruyitao-icon_star{ line-height:0; display:inline-block; margin:0 3px; vertical-align:middle; margin-top:-3px; _margin-top:2px; _vertical-align:text-top;  overflow:hidden;}
+#ruyitao-product-detail-container .ruyitao-icon_star b{ background-position:-55px -61px; display:block; line-height:0; overflow:hidden;}

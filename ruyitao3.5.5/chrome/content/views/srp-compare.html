@@ -1,0 +1,405 @@
+<style id="ruyitao-selector-prefix-fast-compare-protection-style" class="ruyitao-selector-prefix-stylesheet ruyitao-selector-prefix-fast-compare-protection">
+#ruyitao-selector-prefix-fast-compare a, #ruyitao-selector-prefix-fast-compare a:visited,
+#ruyitao-selector-prefix-fast-compare a:link {
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+#ruyitao-selector-prefix-fast-compare img {
+  display: inline-block;
+  border: none;
+  vertical-align: baseline;
+}
+#ruyitao-selector-prefix-fast-compare {
+  display: none;
+  width: 110px;
+  height: 216px;
+  border-right: 1px dashed #dbdbdb;
+  position: relative;
+  top: 0;
+}
+#ruyitao-selector-prefix-huoyan-wrapper .ruyitao-selector-prefix-fc-arrow {
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 120px;
+  left: -6px;
+  overflow: hidden;
+  background: transparent url(%chrome-extension%assets/images/fast-compare-arrow-sprites.png) no-repeat 0 0;
+  -background: transparent url(%chrome-extension%assets/images/fast-compare-arrow-sprites-8bit.png) no-repeat 0 0;
+}
+#ruyitao-selector-prefix-huoyan-wrapper .ruyitao-selector-prefix-fc-arrow-right {
+  background-position: 0 -13px;
+}
+#ruyitao-selector-prefix-huoyan-wrapper .ruyitao-selector-prefix-fc-share-wrapper{
+  width: 92px;
+  position: absolute;
+  right: 5px;
+  top: 38px;
+}
+#ruyitao-selector-prefix-fc-share {
+  cursor: pointer;
+  width: 84px;
+  height: 16px;
+  display: block;
+  background: url(%chrome-extension%assets/images/share_to_microblog_btn.gif) no-repeat 0 0;
+  margin: 0 4px;
+  overflow: hidden;
+}
+
+#ruyitao-selector-prefix-fc-list {
+  margin: 0 1px;
+  padding:0;
+  height: 163px;
+}
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item {
+  list-style: none;
+  /*border-bottom: 1px solid #ddd;*/
+  margin: 0;
+}
+
+.ruyitao-selector-prefix-price-highlight {
+  font-weight: bold;
+}
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item-link {
+  padding: 8px 10px;
+  line-height: 14px;
+  height: 14px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  white-space: nowrap;
+}
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item:hover {
+  background: #f6f6f6;
+}
+
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item:hover a.ruyitao-selector-prefix-fc-item-link {
+  color: #e20000;
+}
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item-img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+#ruyitao-selector-prefix-fc-list .ruyitao-selector-prefix-fc-item-price {
+  font-size: 12px;
+  vertical-align: middle;
+}
+#ruyitao-selector-prefix-fast-compare .ruyitao-selector-prefix-fc-footer {
+  text-align: center;
+  margin-top: 4px;
+}
+#ruyitao-selector-prefix-huoyan-wrapper .ruyitao-selector-prefix-hy-header {
+  color: #0082cb;
+  font-size: 16px;
+  text-align: left;
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  padding-left: 10px;
+}
+#ruyitao-selector-prefix-fast-compare .ruyitao-selector-prefix-fc-spec {
+  display: block;
+  color: #777;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 4px;
+}
+#ruyitao-selector-prefix-fc-logo {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(%chrome-extension%assets/icons/logo-19.png) no-repeat 0 0;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#ruyitao-selector-prefix-fc-title {
+  display: inline-block;
+  vertical-align: middle;
+  height: 19px;
+  line-height: 19px;
+}
+#ruyitao-selector-prefix-fc-product-link,
+#ruyitao-selector-prefix-fc-error-link {
+  line-height: 12px;
+  color: #0082cb;
+  margin: 0 5px 15px 5px;
+}
+#ruyitao-selector-prefix-fc-product-link:visited,
+#ruyitao-selector-prefix-fc-error-link:visited {
+  color: #0082cb;
+}
+
+#ruyitao-selector-prefix-huoyan-wrapper {
+  font-family: "微软雅黑", "Microsoft YaHei", "宋体", Verdana, Geneva, sans-serif;
+  background: #fefefe;
+  padding-bottom: 12px;
+  border: 1px solid #d7d7d7;
+  position: absolute;
+  z-index: 2147483647 !important;
+  height: 283px;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.ruyitao-selector-prefix-hx-sub-wrapper {
+  float: left;
+}
+
+#ruyitao-selector-prefix-huoyan-header {
+  margin-bottom: 10px;
+  background: #4696f0;
+  height: 28px;
+  zoom: 1;
+  display: block;
+}
+
+#ruyitao-selector-prefix-huoyan-body {
+  overflow: hidden;
+}
+
+.ruyitao-selector-prefix-hy-logo {
+  height: 16px;
+  width: 60px;
+  float: left;
+  color: #999;
+  font: 12px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  text-decoration: none;
+  line-height: 18px;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 0 3px 6px;
+}
+
+#ruyitao-selector-prefix-hy-price-curve {
+  width: 314px;
+}
+
+#ruyitao-selector-prefix-hy-price-curve-plot {
+  width: 280px;
+  height: 145px;
+  margin: 23px 0 2px 12px;
+}
+
+#ruyitao-selector-prefix-hy-price-curve-plot .overlay {
+  background: none !important;
+}
+
+#ruyitao-selector-prefix-pc-price-info {
+  font-size: 14px;
+  text-align: center;
+}
+
+#ruyitao-selector-prefix-no-price-comparation-info {
+  font-size: 12px;
+  font-size: black;
+  margin-top: 32px;
+  text-align: center;
+  padding: 0 10px;
+  padding-top: 80px;
+  height: 114px;
+  background: white;
+  position: absolute;
+  top: 0;
+}
+
+#ruyitao-selector-prefix-hy-pc-price-info {
+  font-size: 12px;
+  margin-left: 50px;
+  margin-top: 10px;
+  position: relative;
+  text-align: left;
+}
+
+.ruyitao-selector-prefix-hy-highest-price {
+  color: #e20000;
+  margin-right: 20px;
+}
+
+.ruyitao-selector-prefix-hy-lowest-price {
+  color: #090;
+}
+
+/*.ruyitao-selector-prefix-hy-follow-price {
+  display: block;
+  width: 72px;
+  height: 27px;
+  overflow: hidden;
+  background: transparent url(%chrome-extension%assets/images/srp-compare/follow.png) 0 0 no-repeat;
+  _background: transparent url(%chrome-extension%assets/images/srp-compare/follow-8bit.png) 0 0 no-repeat;
+  position: absolute;
+  top: 4px;
+  right: 22px;
+}
+.ruyitao-selector-prefix-hy-follow-price:hover {
+  background-position: 0 -27px;
+}
+.ruyitao-selector-prefix-hy-follow-price:active {
+  background-position: 0 -54px;
+}*/
+
+#ruyitao-selector-prefix-hy-price-curve-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #b89a7b;
+  border-radius: 2px;
+  background: #f3ddac;
+  background: -webkit-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -moz-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -ms-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -o-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: #f3ddac 9;
+  box-shadow: 1px 1px 2px #aaa;
+  padding: 5px 8px;
+  color: black;
+  text-shadow: 1px 1px white;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  z-index: 2147483647 !important;
+  opacity: 0;
+  display: none 9;
+  zoom: 1;
+  font-size: 12px;
+  font-family: "微软雅黑", "Microsoft YaHei", "宋体", Verdana, Geneva, sans-serif;
+  line-height: 18px;
+}
+
+.ruyitao-selector-prefix-hy-tip-visible {
+  opacity: 0.9 !important;
+  display: block !important;
+}
+
+#ruyitao-selector-prefix-hy-price-curve-arrow-down {
+  position: absolute;
+  bottom: -5px;
+  background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down.png) left top no-repeat;
+  -background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down-8bit.png) left top no-repeat;
+  width: 8px;
+  height: 5px;
+  overflow: hidden;
+}
+
+/*Fix style bug of www.139shop.com*/
+div, input, select, ul {
+  float: none;
+}
+
+#ruyitao-selector-prefix-huoyan-icon {
+  display: none;
+  position: absolute;
+  width: 89px;
+  height: 25px;
+  border-radius: 2px;
+  background: transparent url(%chrome-extension%assets/images/srp-compare/huoyan-bar.png) left top no-repeat;
+  box-shadow: 0px 1px 2px #d0d0d0;
+  cursor: pointer;
+  z-index: 2147483647 !important;
+}
+
+#ruyitao-selector-prefix-huoyan-icon:hover {
+  background-position: 0 -25px;
+}
+
+#ruyitao-selector-prefix-fast-compare.ruyitao-selector-prefix-float-right-layout {
+  float: right;
+  border-left: 1px dashed #dbdbdb;
+  border-right: none;
+}
+
+#ruyitao-selector-prefix-hy-ivy-bar {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+  border-top: 1px solid #f6f6f6;
+  text-align: center;
+  color: black;
+  font-size: 12px;
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+
+#ruyitao-selector-prefix-hy-ivy-bar * {
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn {
+  display: inline-block;
+  width: 60px;
+  height: 24px;
+  margin-right:10px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  background: transparent url(%chrome-extension%assets/images/ivy-want-btns.png) left top no-repeat;
+  cursor: pointer;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn:hover {
+  background-position: 0 -25px;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn:active {
+  background-position: 0 -50px;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn.ruyitao-selector-prefix-bought {
+  cursor: default;
+  background-position: 0 -75px !important;
+}
+
+.ruyitao-selector-prefix-ivy-wants-count {
+  cursor: pointer;
+  margin: 0 3px;
+  color: #0082cb !important;
+  vertical-align: initial !important;
+  text-decoration: none !important;
+}
+
+#ruyitao-selector-prefix-huoyan-wrapper.ruyitao-selector-prefix-fetch-like-count-error {
+  height: 253px !important;
+}
+
+#ruyitao-selector-prefix-huoyan-wrapper.ruyitao-selector-prefix-fetch-like-count-error #ruyitao-selector-prefix-hy-ivy-bar {
+  display: none !important;
+}
+
+</style>
+<div id="ruyitao-selector-prefix-huoyan-wrapper">
+  <div id="ruyitao-selector-prefix-huoyan-header">
+    <a class="ruyitao-selector-prefix-hy-logo" href="http://ruyi.taobao.com/?utm_medium=ext&utm_source=ruyi" target="_blank">
+      <!--[if lte IE 6]>
+      <img title="如意淘提供" src="%chrome-extension%assets/images/logo-52x16-8bit.png"/>
+      <![endif]-->
+      <![if gt IE 6]>
+      <img src="%chrome-extension%assets/images/logo-52x16.png"/>
+      <![endif]>
+    </a>
+  </div>
+  <div id="ruyitao-selector-prefix-huoyan-body">
+    <div id="ruyitao-selector-prefix-fast-compare" class="ruyitao-selector-prefix-hx-sub-wrapper">
+      <div class="ruyitao-selector-prefix-hy-header">比价</div>
+      <ul id="ruyitao-selector-prefix-fc-list"></ul>
+      <div class="ruyitao-selector-prefix-fc-footer">
+        <a id="ruyitao-selector-prefix-fc-product-link" href="javascript:void(0);">更多</a>
+        <a id="ruyitao-selector-prefix-fc-error-link" title="纠错有奖" href="javascript:void(0);">纠错</a>
+      </div>
+      <div id="ruyitao-selector-prefix-no-price-comparation-info">暂无</div>
+    </div>
+    <div id="ruyitao-selector-prefix-hy-price-curve" class="ruyitao-selector-prefix-hx-sub-wrapper">
+      <div class="ruyitao-selector-prefix-hy-header">价格走向</div>
+      <div id="ruyitao-selector-prefix-hy-price-curve-plot"></div>
+      <div id="ruyitao-selector-prefix-hy-pc-price-info"></div>
+    </div>
+  </div>
+  <div id="ruyitao-selector-prefix-hy-ivy-bar">
+    <a id="ruyitao-selector-prefix-hy-ivy-want-btn" class="ruyitao-selector-prefix-ivy-want-btn"></a><span id="ruyitao-selector-prefix-hy-ivy-wants-text"></span>
+  </div>
+  <!-- <div class="ruyitao-selector-prefix-fc-share-wrapper"><a id="ruyitao-selector-prefix-fc-share" href="javascript:void(0);"></a></div> -->
+  <div class="ruyitao-selector-prefix-fc-arrow"></div>
+</div>
+<div id="ruyitao-selector-prefix-huoyan-icon"></div>

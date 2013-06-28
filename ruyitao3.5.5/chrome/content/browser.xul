@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="chrome://ruyitao/content/toolbar-button.css" type="text/css"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="shoppingassist-overlay">
+  <script src="main.js"></script>
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton oncommand="com.ookong.shoppingassist.openPopup()"
+                   class="toolbarbutton-1 chromeclass-toolbar-additional"
+                   id="ruyitao-toolbar-button"
+                   label="如意淘"
+                   tooltiptext="如意淘">
+    </toolbarbutton>
+  </toolbarpalette>
+</overlay>

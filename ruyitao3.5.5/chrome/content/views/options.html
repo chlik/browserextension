@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title rel="i18n[title]"></title> 
+<style>
+body {font-size: 14px; background:white;}
+body, h1,ul, div{margin:0;padding:0;}
+body{width:650px;overflow-x:hidden;}
+h1{ background:#F0F7F9; font-size: 150%; padding:5px;border-bottom: 1px solid #6B90DA; width: 2000px;}
+h1 img{vertical-align:middle; margin-right:10px;}
+h2 {font-size: 120%; margin: 10px 0 5px; }
+.container { margin-left: 10px; }
+label{ padding-right:10px;}
+dt{font-weight:bold;}
+.m10{ margin:10px;}
+.tip { margin-left: 10px; }
+.hide { display: none; }
+ul.list li{ list-style: none; float: left; margin-right: 20px; }
+.clearfix:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+</style>
+</head>
+<body>
+<script src="../assets/js/jquery-1.7.1.min.js"></script>
+<h1><img src="../assets/icons/logo-32.png" /><span rel="i18n[title]"></span></h1>
+<div class="container">
+<h2 rel="i18n[search_result_setting]"></h2>
+<span id="search-result-setting">
+  <input type="radio" name="search-result-setting" value="no" id="srs-no" checked="checked" /><label for="srs-no" rel="i18n[no]"></label>
+  <input type="radio" name="search-result-setting" value="yes" id="srs-yes" /><label for="srs-yes" rel="i18n[yes]"></label>
+</span>
+<div id="price-compare-result-setting-wrapper">
+<h2 rel="i18n[price_compare_result_setting]"></h2>
+<span id="price-compare-result-setting">
+  <input type="radio" name="price-compare-result-setting" value="no" id="pcrs-no" checked="checked" /><label for="pcrs-no" rel="i18n[no]"></label>
+  <input type="radio" name="price-compare-result-setting" value="yes" id="pcrs-yes" /><label for="pcrs-yes" rel="i18n[yes]"></label>
+</span>
+</div>
+<div id="serp-list-result-setting-wrapper">
+<h2 rel="i18n[serp_list_result_setting]"></h2>
+<span id="serp-list-result-setting">
+  <input type="radio" name="serp-list-result-setting" value="no" id="slrs-no" checked="checked" /><label for="slrs-no" rel="i18n[no]"></label>
+  <input type="radio" name="serp-list-result-setting" value="yes" id="slrs-yes" /><label for="slrs-yes" rel="i18n[yes]"></label>
+</span>
+</div>
+<p rel="i18n[feedback]"></p>
+<p rel="i18n[feedback_link]"></p>
+</div>
+<hr />
+<div style="margin-left: 10px;">
+</div>
+<script>
+if ( !exports ) var exports = {};
+(function(S){
+    var exports = S; 
+    Components.utils.import("resource://ruyitao/background.js", S);
+    var B = S.exports.background.get();
+    B.extend(S, B);
+    S.browser = { extension: new S.browser.tabs.extension(document) };
+    S.browser.extension.sendRequest = function(request, callback) {
+      S.browser.extension.sendRequestInternal(request, function(data) {
+        if ( data && typeof data == 'object' && typeof data['response'] != "undefined" ) {
+          callback && callback(JSON.parse(data['response']));
+        } else {
+          callback && callback(data);
+        }
+      });
+    };
+    S.i18n = {
+        locale: 'en',
+        messages: {
+            zh: {
+                search_on: '搜索网站',
+                title: '如意淘 - 选项',
+                country: '选择国家',
+                country_us: '美国',
+                country_zh: '中国',
+                country_uk: '英国',
+                country_de: '德国',
+        country_fr: '法国',
+        country_ca: '加拿大',
+        country_it: '意大利',
+        yes: '是',
+        no: '否',
+                choose_at_least_one: '请至少选中一个搜索网站',
+        search_result_setting: '搜索页面默认显示比价信息：',
+        price_compare_result_setting: '产品详情页默认显示比价信息：',
+        serp_list_result_setting: '在百度显示如意淘的购物相关结果：',
+                feedback: '如果有问题，请访问如意淘官方网站',
+                feedback_link: '<a href="http://ruyi.taobao.com/" target="_blank">http://ruyi.taobao.com</a>',
+                hide: '隐藏',
+                show: '显示'
+            },
+            en: {
+                search_on: 'Search on',
+                title: 'Shopping Assistant - Options',
+                country: 'Select Country',
+                country_us: 'United States',
+                country_zh: 'China',
+                country_uk: 'United Kingdom',
+                country_de: 'Deutschland',
+        country_fr: 'France',
+        country_ca: 'Canada',
+        country_it: 'Italy',
+        yes: 'Yes',
+        no: 'No',
+                "choose_at_least_one": "Please select at least one search site",
+        search_result_setting: 'Show more results by default: ',
+                feedback: 'Please share your ideas at our support site. Thank you. ',
+                feedback_link: '<a href="http://getsatisfaction.com/ookong" target="_blank">http://getsatisfaction.com/ookong</a>',
+				
+                hide: 'Hide',
+                show: 'Show'
+            },
+            de: {
+          'search_on' : 'Suche bei',
+          'title' : 'Einkaufsassistent - Optionen',
+          'country' : 'Land auswählen',
+          'country_de' : 'Deutschland',
+          'country_uk' : 'Vereinigtes Königreich',
+          'country_us' : 'Vereinigte Staaten',
+          'country_zh' : 'China',
+        country_fr: 'France',
+        country_ca: 'Canada',
+        country_it: "Italie",
+        yes: 'sein',
+        no: 'nicht',
+        search_result_setting: 'Show more results by default: ',
+          'choose_at_least_one' : 'Bitte wählen Sie mindestens eine Seite zum Durchsuchen aus',
+                feedback: 'Teilen Sie uns bitte Ihre Verbesserungsvorschläge auf der Support Seite mit. Vielen Dank.',
+                feedback_link: '<a href="http://getsatisfaction.com/ookong" target="_blank">http://getsatisfaction.com/ookong</a>',
+				
+               'hide' : 'Verstecken',
+               'show' : 'Zeigen'
+            }
+        },
+
+        setLocale: function(locale) {
+            if ( !(locale in this.messages) ) {
+                return;
+            }
+            this.locale = locale;
+        },
+        
+        getMessage: function(name) {
+            if ( (name in this.messages[this.locale]) ) {
+                return this.messages[this.locale][name];
+            } else {
+                return '';
+            }
+        }
+    };
+
+    var set_locale = function( event ){
+        S.browser.extension.sendRequest({
+            topic: 'options_set',
+            locale: this.value
+        }, function() {
+            location.reload();
+        })
+    };
+
+    S.browser.extension.sendRequest({
+        topic: 'get_search_engines'
+    }, function( options ){
+        var locale = options.locale;
+        S.i18n.setLocale(locale);
+        $('#ookong-locale-' + locale).attr( 'checked', true );
+        $('*').each(function(){
+            var match;
+            if ( match = ($(this).attr('rel')||'').match( /i18n\[(.*?)\]/ ) ) {
+                $(this).html(S.i18n.getMessage(match[1])); 
+            }
+        });
+        $("input[name=ookong-locale]").change(set_locale);
+      if (locale != 'zh') {
+        $('#price-compare-result-setting-wrapper').hide();
+        $('#serp-list-result-setting-wrapper').hide();
+      }
+    });
+
+  var setResultSetting = function(type, showing) {
+    var request = {
+      topic: 'options_set'
+    };
+
+    if (type == 'search') {
+      request.search_result_setting = showing;
+    } else if (type == 'price_compare') {
+      request.price_compare_result_setting = showing;
+    } else if (type == 'serp_list') {
+      request.serp_list_result_setting = showing;
+    }
+
+    S.browser.extension.sendRequest(request);
+  };
+
+  $('#srs-no').click(function() {
+    setResultSetting('search', false);
+  });
+
+  $('#srs-yes').click(function() {
+    setResultSetting('search', true);
+  });
+
+  $('#pcrs-no').click(function() {
+    setResultSetting('price_compare', false);
+  });
+
+  $('#pcrs-yes').click(function() {
+    setResultSetting('price_compare', true);
+  });
+  
+  $('#slrs-no').click(function() {
+    setResultSetting('serp_list', false);
+  });
+
+  $('#slrs-yes').click(function() {
+    setResultSetting('serp_list', true);
+  });
+
+  // Init search result setting.
+  S.browser.extension.sendRequest({
+    topic: 'options_get',
+    options: ['search', 'price_compare', 'serp_list']
+  }, function(result) {
+    if (result.search_result_setting) {
+      $('#srs-yes').attr('checked', 'checked');
+    } else {
+      $('#srs-no').attr('checked', 'checked');
+    }
+
+    if (result.price_compare_result_setting) {
+      $('#pcrs-yes').attr('checked', 'checked');
+    } else {
+      $('#pcrs-no').attr('checked', 'checked');
+    }
+    
+    if (result.serp_list_result_setting) {
+      $('#slrs-yes').attr('checked', 'checked');
+    } else {
+      $('#slrs-no').attr('checked', 'checked');
+    }
+  });
+})(exports); 
+</script>
+</body> 
+</html>

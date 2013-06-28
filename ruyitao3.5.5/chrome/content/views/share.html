@@ -1,0 +1,345 @@
+<style type="text/css" class="ruyitao-selector-prefix-share-protection">
+#ruyitao-selector-prefix-share-wrapper {
+  display: none;
+  position: fixed;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 580px;
+  height: 260px;
+  z-index: 2147483647 !important;
+  padding: 10px 20px;
+  color: #000;
+  font: 15px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  background-color: #fbfbfb;
+  background-image: -webkit-linear-gradient(top, #fbfbfb, #e8ebec);
+  background-image: -moz-linear-gradient(top, #fbfbfb, #e8ebec);
+  background-image: -o-linear-gradient(top, #fbfbfb, #e8ebec);
+  background-image: -ms-linear-gradient(top, #fbfbfb, #e8ebec);
+  background-image: linear-gradient(top, #fbfbfb, #e8ebec);
+  box-shadow: 2px 3px 5px #777;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.ruyitao-selector-prefix-share-wrapper-hidden {
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:alpha(opacity=0);
+}
+
+.ruyitao-selector-prefix-share-wrapper-visible {
+  opacity: 1;
+  -moz-opacity: 1;
+  filter:alpha(opacity=100);
+}
+
+.ruyitao-selector-prefix-share-header {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.ruyitao-selector-prefix-share-logo {
+  float: left;
+  margin-top: 10px;
+  width: 174px;
+  height: 24px;
+  background: transparent url(%chrome-extension%assets/images/share/logo.png) left center no-repeat;
+}
+
+.ruyitao-selector-prefix-weibo-logo {
+  width: 115px;
+  height: 35px;
+  background: transparent url(%chrome-extension%assets/images/share/weibo.png) left center no-repeat;
+  float: right;
+}
+
+.ruyitao-selector-prefix-share-body {
+  padding: 0 16px;
+}
+
+#ruyitao-selector-prefix-remain-letter {
+  text-align: right;
+}
+
+#ruyitao-selector-prefix-remain-letter-number {
+  margin: 0 10px;
+  color: #ffb941;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px #666;
+}
+
+#ruyitao-selector-prefix-remain-letter-number.ruyitao-selector-prefix-letter-overflow {
+  color: #da0000;
+}
+
+#ruyitao-selector-prefix-share-main-content {
+  margin: 5px 0 10px 0;
+  white-space: nowrap;
+}
+
+#ruyitao-selector-prefix-share-image-wrapper {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+  height: 90px;
+  border: 2px solid #ffb941;
+  border-radius: 2px;
+  text-align: center;
+  background: white;
+}
+
+#ruyitao-selector-prefix-share-image {
+  vertical-align: middle;
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.ruyitao-selector-prefix-tick-ico {
+  left: 3px;
+  bottom: 3px;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: transparent url(%chrome-extension%assets/images/share/tick-ico.png) left top no-repeat;
+}
+
+#ruyitao-selector-prefix-share-text {
+  font: 13px/1.3 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  margin-left: 6px;
+  vertical-align: top;
+  padding: 8px;
+  width: 426px;
+  height: 76px;
+  border: 1px solid #bebebe;
+  border-radius: 1px;
+  box-shadow: 1px 2px 5px #ccc;
+  resize: none;
+  box-sizing: content-box; /* Fix box model bug when page in quirks mode*/
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; 
+}
+
+.ruyitao-selector-prefix-warning {
+  -webkit-animation: warning .2s 4 ease-in alternate;
+  -moz-animation: warning .2s 4 ease-in alternate;
+  -o-animation: warning .2s 4 ease-in alternate;
+  animation: warning .2s 4 ease-in alternate;
+}
+
+@-webkit-keyframes warning {
+ from {
+   background-color: white;
+ }
+ to {
+   background-color: #ffbbbb;
+ }
+}
+
+@-moz-keyframes warning {
+ from {
+   background-color: white;
+ }
+ to {
+   background-color: #ffbbbb;
+ }
+}
+
+#ruyitao-selector-prefix-follow-us {
+  margin-left: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+#ruyitao-selector-prefix-share-btn {
+  float: right;
+  cursor: pointer;
+  width: 88px;
+  height: 38px;
+}
+
+.ruyitao-selector-prefix-share-btn-enabled {
+  background: url(%chrome-extension%assets/images/share/share-btn.png) no-repeat 0 0;
+}
+
+.ruyitao-selector-prefix-share-btn-enabled:hover {
+  background: url(%chrome-extension%assets/images/share/share-btn-hover.png) no-repeat 0 0;
+}
+
+.ruyitao-selector-prefix-share-btn-enabled:active {
+  background: url(%chrome-extension%assets/images/share/share-btn-active.png) no-repeat 0 0;
+}
+
+.ruyitao-selector-prefix-share-btn-disabled {
+  background: url(%chrome-extension%assets/images/share/share-btn-disabled.png) no-repeat 0 0;
+  cursor: default;
+}
+
+#ruyitao-selector-prefix-share-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647 !important;
+  background-color: white;
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.ruyitao-selector-prefix-overlay-visible {
+  opacity: .7;
+  -moz-opacity: .7;
+  filter:alpha(opacity=77);
+}
+
+.ruyitao-selector-prefix-overlay-hidden {
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:alpha(opacity=0);
+}
+
+.ruyitao-selector-prefix-label {
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-line-height-setter {
+  display: inline-block;
+  border: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#ruyitao-selector-prefix-share-result {
+  text-align: center;
+}
+
+.ruyitao-selector-prefix-share-result {
+  line-height: 35px;
+  vertical-align: top;
+  padding-left: 50px;
+  color: #606060;
+  font-size: 35px;
+  width: 180px;
+  height: 40px;
+  margin: 50px auto 20px;
+}
+
+#ruyitao-selector-prefix-share-success, #ruyitao-selector-prefix-share-failure {
+  display: none;
+}
+
+#ruyitao-selector-prefix-share-success .ruyitao-selector-prefix-share-result{
+  background: url(%chrome-extension%assets/images/share/success-ico.png) no-repeat left top;
+}
+
+#ruyitao-selector-prefix-share-failure .ruyitao-selector-prefix-share-result{
+  background: url(%chrome-extension%assets/images/share/failure-ico.png) no-repeat left top;
+}
+
+#ruyitao-selector-prefix-share-failure-reason {
+  color: #646464;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.ruyitao-selector-prefix-share-result-btn {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  line-height: 25px;
+  background: url(%chrome-extension%assets/images/share/result-btn.png) no-repeat left top;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  text-align: center;
+  color: #606060 !important;
+  text-shadow: 1px 1px #ddd;
+}
+
+.ruyitao-selector-prefix-share-result-btn:hover {
+  color: #606060 !important;
+  text-decoration: none !important;
+  background: url(%chrome-extension%assets/images/share/result-btn-hover.png) no-repeat left top;
+}
+
+.ruyitao-selector-prefix-share-result-btn:active {
+  color: #606060 !important;
+  text-decoration: none !important;
+  background: url(%chrome-extension%assets/images/share/result-btn-active.png) no-repeat left top;
+}
+
+#ruyitao-selector-prefix-check-out-share {
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  color: #606060 !important;
+  margin-bottom: 15px;
+  text-decoration: none !important;
+  outline: none;
+}
+
+#ruyitao-selector-prefix-check-out-share:hover, #ruyitao-selector-prefix-check-out-share:active {
+  text-decoration: underline !important;
+  color: #606060 !important;
+}
+
+/*Fix style bug of www.139shop.com*/
+#ruyitao-selector-prefix-share-control {
+  text-align: left;
+}
+
+.ruyitao-selector-prefix-close-btn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: url(%chrome-extension%assets/images/close-icon-18x18.png) no-repeat 0 0;
+  -background: url(%chrome-extension%assets/images/close-icon-18x18-8bit.png) no-repeat 0 0;
+  cursor: pointer;
+}
+</style>
+<div id="ruyitao-selector-prefix-share-overlay" class="ruyitao-selector-prefix-overlay-hidden ruyitao-selector-prefix-share-protection"></div>
+<div id="ruyitao-selector-prefix-share-wrapper" class="ruyitao-selector-prefix-share-wrapper-hidden ruyitao-selector-prefix-share-protection">
+  <div class="ruyitao-selector-prefix-share-header">
+    <div class="ruyitao-selector-prefix-share-logo"></div>
+    <div class="ruyitao-selector-prefix-weibo-logo"></div>
+  </div>
+  <div id="ruyitao-selector-prefix-share-form" class="ruyitao-selector-prefix-share-body">
+    <div id="ruyitao-selector-prefix-remain-letter"></div>
+    <div id="ruyitao-selector-prefix-share-main-content">
+      <span id="ruyitao-selector-prefix-share-image-wrapper">
+        <img id="ruyitao-selector-prefix-share-image"/>
+        <b class="ruyitao-selector-prefix-line-height-setter"></b>
+        <em class="ruyitao-selector-prefix-tick-ico"></em>
+      </span>
+      <textarea id="ruyitao-selector-prefix-share-text"></textarea>
+    </div>
+    <div id="ruyitao-selector-prefix-share-control">
+      <input type="checkbox" id="ruyitao-selector-prefix-follow-us" checked="checked" /><label class="ruyitao-selector-prefix-label" for="ruyitao-selector-prefix-follow-us">关注如意淘</label>
+      <div id="ruyitao-selector-prefix-share-btn" class="ruyitao-selector-prefix-share-btn-enabled"></div>
+    </div>
+  </div>
+  <div id="ruyitao-selector-prefix-share-result" class="ruyitao-selector-prefix-share-body">
+    <div id="ruyitao-selector-prefix-share-success">
+      <div class="ruyitao-selector-prefix-share-result">分享成功！</div>
+      <a target="_blank" id="ruyitao-selector-prefix-check-out-share">查看分享的内容</a>
+      <a class="ruyitao-selector-prefix-share-close-btn ruyitao-selector-prefix-share-result-btn">关闭</a>
+    </div>
+    <div id="ruyitao-selector-prefix-share-failure">
+      <div class="ruyitao-selector-prefix-share-result">分享失败！</div>
+      <div id="ruyitao-selector-prefix-share-failure-reason"></div>
+      <a id="ruyitao-selector-prefix-share-return-btn" class="ruyitao-selector-prefix-share-result-btn">返回</a>
+    </div>
+  </div>
+  <a class="ruyitao-selector-prefix-close-btn ruyitao-selector-prefix-share-close-btn" title="关闭"></a>
+</div>

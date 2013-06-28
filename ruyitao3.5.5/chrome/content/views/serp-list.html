@@ -1,0 +1,663 @@
+﻿<style type="text/css" id="ruyitao-selector-prefix-serp-list-style" class="ruyitao-selector-prefix-stylesheet ruyitao-selector-prefix-serp-list-protection">
+/* list */
+#ruyitao-selector-prefix-serp-list a {
+  outline: none;
+}
+#ruyitao-selector-prefix-serp-list img {
+  border: none;
+  outline: none;
+}
+
+.ruyitao-selector-prefix-serp-list-img {
+  background: transparent url(%chrome-extension%assets/images/serp-list/img.png) 0 0 no-repeat;
+  _background: transparent url(%chrome-extension%assets/images/serp-list/img-8bit.png) 0 0 no-repeat;
+}
+
+#ruyitao-selector-prefix-serp-list {
+  position: relative;
+  font: 12px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  
+  overflow: hidden;
+  cursor: default;
+  border-radius: 2px;
+  border: 1px solid #efefef;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+#ruyitao-selector-prefix-serp-list-header {
+  height: 35px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+.ruyitao-selector-prefix-serp-list-logo {
+  background-position: 0 0;
+  display: block;
+  width: 65px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.ruyitao-selector-prefix-serp-list-close {
+  background-position: -35px -22px;
+  display: block;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  cursor: pointer;
+}
+.ruyitao-selector-prefix-serp-list-close:hover {
+  background-position: -50px -22px;
+}
+#ruyitao-selector-prefix-serp-list-close-options {
+  display: none;
+  position: absolute;
+  right: 33px;
+  top: 11px;
+  z-index: 1000;
+  width: 193px;
+}
+#ruyitao-selector-prefix-serp-list-close-options ul {
+  background-color: white;
+  border: 1px solid #DCDCDC;
+  text-align: left;
+  margin: 0;
+  padding: 2px 0;
+  font-size: 13px;
+  list-style-type: none;
+  -webkit-border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 73px;
+}
+#ruyitao-selector-prefix-serp-list-close-options ul li {
+  color: #747474;
+  padding: 0 15px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  height: 36px;
+  line-height: 36px;
+}
+#ruyitao-selector-prefix-serp-list-close-options ul li:hover {
+  color: #444;
+}
+#ruyitao-selector-prefix-serp-list-close-options-dismiss-forever {
+  border-top: 1px solid #DCDCDC;
+}
+
+.ruyitao-selector-prefix-serp-list-listview {
+  position: relative;
+  height: 360px;
+  margin: 10px 14px 0 14px;
+  overflow: hidden;
+}
+.ruyitao-selector-prefix-serp-list-listview.ruyitao-selector-prefix-serp-list-listview-width-0 {
+  width: 250px;
+}
+
+.ruyitao-selector-prefix-serp-list-listview.ruyitao-selector-prefix-serp-list-listview-width-268,
+.ruyitao-selector-prefix-serp-list-listview.ruyitao-selector-prefix-serp-list-listview-width-0 {
+  height: 390px;
+  margin: 10px 9px 0 9px;
+}
+.ruyitao-selector-prefix-serp-list-listview-width-268 .ruyitao-selector-prefix-serp-list-listview-item,
+.ruyitao-selector-prefix-serp-list-listview-width-268 .ruyitao-selector-prefix-serp-list-listview-item.ruyitao-selector-prefix-serp-list-listview-item-small,
+.ruyitao-selector-prefix-serp-list-listview-width-0 .ruyitao-selector-prefix-serp-list-listview-item,
+.ruyitao-selector-prefix-serp-list-listview-width-0 .ruyitao-selector-prefix-serp-list-listview-item.ruyitao-selector-prefix-serp-list-listview-item-small {
+  width: 118px;
+  height: 118px;
+}
+.ruyitao-selector-prefix-serp-list-listview-width-268 .ruyitao-selector-prefix-serp-list-listview-item .ruyitao-selector-prefix-serp-list-listview-item-title,
+.ruyitao-selector-prefix-serp-list-listview-width-268 .ruyitao-selector-prefix-serp-list-listview-item.ruyitao-selector-prefix-serp-list-listview-item-small .ruyitao-selector-prefix-serp-list-listview-item-title,
+.ruyitao-selector-prefix-serp-list-listview-width-0 .ruyitao-selector-prefix-serp-list-listview-item .ruyitao-selector-prefix-serp-list-listview-item-title,
+.ruyitao-selector-prefix-serp-list-listview-width-0 .ruyitao-selector-prefix-serp-list-listview-item.ruyitao-selector-prefix-serp-list-listview-item-small .ruyitao-selector-prefix-serp-list-listview-item-title {
+  display: none;
+}
+.ruyitao-selector-prefix-serp-list-listview-item {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 168px;
+  height: 168px;
+  border: 1px solid #f3f3f3;
+  overflow: hidden;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+}
+.ruyitao-selector-prefix-serp-list-listview-item.ruyitao-selector-prefix-serp-list-listview-item-small {
+  width: 108px;
+  height: 108px;
+}
+.ruyitao-selector-prefix-serp-list-image-wrapper {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-serp-list-image {
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle !important;
+}
+.ruyitao-selector-prefix-line-height-setter {
+  display: inline-block;
+  border: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-serp-list-listview-item-price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, .9);
+  *background-color: white;
+  *filter: alpha(opacity=95);
+  background-color: white\9;
+  filter: alpha(opacity=95)\9;
+  color: #df0000;
+  text-align: right;
+}
+.ruyitao-selector-prefix-serp-list-listview-item-price span {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+
+.ruyitao-selector-prefix-serp-list-listview-item:hover{_background: #fff;}
+.ruyitao-selector-prefix-serp-list-listview-item:hover .ruyitao-selector-prefix-serp-list-listview-item-base-info {
+  opacity: 1;
+  left: 0;
+}
+.ruyitao-selector-prefix-serp-list-listview-item-base-info {
+  position: absolute;
+  bottom: 22px;
+  left: -10000px;
+  width: 100%;
+  /*height: 68px;*/
+  background-color: #000;
+  background-color: rgba(0, 0, 0, .5);
+  *background-color: #000;
+  *filter: alpha(opacity=70);
+  background-color: #000\9;
+  filter: alpha(opacity=70)\9;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-out 0.08s;
+  -moz-transition: opacity .2s ease-out 0.08s;
+  -o-transition: opacity .2s ease-out 0.08s;
+  -ms-transition: opacity .2s ease-out 0.08s;
+  transition: opacity .2s ease-out 0.08s;
+}
+.ruyitao-selector-prefix-serp-list-listview-item-title,
+.ruyitao-selector-prefix-serp-list-listview-item-shopname {
+  margin: 5px 8px;
+}
+.ruyitao-selector-prefix-serp-list-listview-item-small .ruyitao-selector-prefix-serp-list-listview-item-title {
+  display: none;
+}
+
+#ruyitao-selector-prefix-serp-list-footer {
+  height: 16px;
+  line-height: 18px;
+  position: relative;
+  color: #c1c1c1;
+  text-align: right;
+  padding-right: 50px;
+  vertical-align: middle;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
+.ruyitao-selector-prefix-serp-list-more {
+  color: #0082cb;
+  font-size: 14px;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.ruyitao-selector-prefix-serp-list-etao {
+  display: block;
+  position: absolute;
+  width: 33px;
+  height: 16px;
+  right: 10px;
+  top: 0px;
+  background-position: 0 -22px;
+}
+
+/* popup */
+#ruyitao-selector-prefix-serp-list-mask {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2147483645 !important;
+  background-color: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+#ruyitao-selector-prefix-serp-list-detail-popup img,
+#ruyitao-selector-prefix-serp-list-detail-popup a {
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+#ruyitao-selector-prefix-serp-list-detail-popup {
+  display: none;
+  position: fixed;
+  -position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -245px 0 0 -380px;
+  -margin-top: 0;
+  z-index: 2147483646 !important;
+  
+  font: 15px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  width: 760px;
+  height: 490px;
+  color: black;
+  overflow: hidden; /*Fix IE6 bug*/
+}
+
+.ruyitao-selector-prefix-serp-list-detail-popup-top {
+  padding: 10px;
+  height: 420px;
+  
+  background: rgba(255, 255, 255, 0.95);
+  background: white\9;
+  /*opacity: 0.95;*/
+  filter: alpha(opacity=95);
+  overflow: hidden;
+}
+
+.ruyitao-selector-prefix-serp-list-product-image {
+  float: left;
+  width: 420px;
+  height: 420px;
+  line-height: 420px;
+  margin-right: 20px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 0;
+  *font-size: 318px; /*Fix IE7*/
+  -font-size: 347px; /*Fix IE6*/
+  overflow: hidden;
+}
+
+#ruyitao-selector-prefix-serp-list-product-detail-image {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-serp-list-product-info {
+  float: left;
+  width: 290px;
+}
+
+.ruyitao-selector-prefix-serp-list-saved-and-bought-info {
+  color: #a3a3a3;
+  font-size: 12px;
+}
+
+#ruyitao-selector-prefix-serp-list-detail-popup a.ruyitao-selector-prefix-serp-list-saved-and-bought-count {
+  font-size: 23px;
+  margin: 0 3px;
+  color: #ff3000;
+  cursor: pointer;
+}
+
+#ruyitao-selector-prefix-serp-list-detail-popup a {
+  color: black;
+}
+
+#ruyitao-selector-prefix-serp-list-product-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+  margin: 12px 0 5px 0;
+}
+
+#ruyitao-selector-prefix-serp-list-detail-price {
+  color: #ff3000;
+}
+
+#ruyitao-selector-prefix-serp-list-seller {
+  margin: 5px 0 10px 0;
+}
+
+#ruyitao-selector-prefix-serp-list-price-curve-wrapper {
+  border-top: 1px dashed #e0e0e0;
+  padding-top: 9px;
+}
+#ruyitao-selector-prefix-serp-list-price-curve {
+  height: 112px;
+  margin: 12px 0;
+}
+#ruyitao-selector-prefix-serp-list-price-curve.ruyitao-selector-prefix-serp-list-price-curve-loading {
+  background: transparent url(%chrome-extension%assets/images/loading.gif) center center no-repeat;
+}
+
+#ruyitao-selector-prefix-serp-list-price-curve .tickLabels .tickLabel {
+  font-size: 12px;
+}
+
+#ruyitao-selector-prefix-serp-list-buy-btn, #ruyitao-selector-prefix-serp-list-want-btn {
+  display: inline-block;
+  height: 35px;
+  width: 82px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: -95px 0;
+  margin-right: 5px;
+}
+
+#ruyitao-selector-prefix-serp-list-buy-btn:hover {
+  background-position: -95px -37px;
+}
+
+#ruyitao-selector-prefix-serp-list-buy-btn:active {
+  background-position: -95px -74px;
+}
+
+/*#ruyitao-selector-prefix-serp-list-buy-btn.buy-again {
+  width: 101px;
+  background-position: -84px -98px;
+}
+
+#ruyitao-selector-prefix-serp-list-buy-btn.buy-again:hover {
+  background-position: -84px -135px;
+}
+
+#ruyitao-selector-prefix-serp-list-buy-btn.buy-again:active {
+  background-position: -84px -172px;
+}*/
+
+#ruyitao-selector-prefix-serp-list-want-btn {
+  background-position: -179px 0;
+}
+#ruyitao-selector-prefix-serp-list-want-btn:hover {
+  background-position: -179px -37px;
+}
+#ruyitao-selector-prefix-serp-list-want-btn:active {
+  background-position: -179px -74px;
+}
+#ruyitao-selector-prefix-serp-list-want-btn.ruyitao-selector-prefix-serp-list-want-btn-bought {
+  background-position: -95px -111px;
+}
+
+#ruyitao-selector-prefix-serp-list-product-detail-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  background-position: -65px -22px;
+}
+
+#ruyitao-selector-prefix-price-curve-tip {
+  font: 14px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #b89a7b;
+  border-radius: 2px;
+  background: #f3ddac;
+  background: -webkit-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -moz-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -ms-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -o-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: linear-gradient(180deg, #f7e8c6, #f3ddac);
+  background: #f3ddac\9;
+  box-shadow: 1px 1px 2px #aaa;
+  padding: 5px 8px;
+  color: black;
+  text-shadow: 1px 1px white;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  z-index: 2147483647 !important;
+  opacity: 0;
+  display:none\9;
+  zoom: 1;
+}
+
+.ruyitao-selector-prefix-tip-visible {
+  opacity: 0.9 !important;
+  display:block !important;
+}
+
+#ruyitao-selector-prefix-price-curve-arrow-down {
+  position: absolute;
+  bottom: -5px;
+  background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down.png) left top no-repeat;
+  -background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down-8bit.png) left top no-repeat;
+  width: 8px;
+  height: 5px;
+  overflow: hidden;
+}
+
+.ruyitao-selector-prefix-fetch-like-count-error #ruyitao-selector-prefix-serp-list-want-btn,
+.ruyitao-selector-prefix-fetch-like-count-error .ruyitao-selector-prefix-serp-list-saved-and-bought-info {
+  display: none;
+}
+
+/* comparation box */
+.ruyitao-selector-prefix-price-comparation-box {
+  box-shadow: 0 0 10px #ccc;
+  clear: both;
+  position: absolute;
+  display: none;
+  background-color: #fdfdfd;
+  background: -webkit-linear-gradient(top, #fdfdfd, #fcfcfc);
+  background: -o-linear-gradient(top, #fdfdfd, #fcfcfc);
+  background: -ms-linear-gradient(top, #fdfdfd, #fcfcfc);
+  background: -moz-linear-gradient(top, #fdfdfd, #fcfcfc);
+  background: linear-gradient(180deg, #fdfdfd, #fcfcfc);
+  *background-color: #fdfdfd;
+  background-color: #fdfdfd\9;
+  height: 50px;
+  width: 100%;
+  -overflow: hidden; /*Fix for IE6*/
+  _float: left;
+}
+.ruyitao-selector-prefix-price-comparation-box.ruyitao-selector-prefix-price-comparation-box-show {
+  display: block;
+  bottom: 50px;
+  *bottom: 0;
+  bottom: 0\9;
+  -webkit-transition: bottom .2s ease-out 0.08s;
+  -moz-transition: bottom .2s ease-out 0.08s;
+  -o-transition: bottom .2s ease-out 0.08s;
+  -ms-transition: bottom .2s ease-out 0.08s;
+  transition: bottom .2s ease-out 0.08s;
+}
+.ruyitao-selector-prefix-price-comparation-box.ruyitao-selector-prefix-price-comparation-box-animate {
+  bottom: 0;
+}
+#ruyitao-selector-prefix-market-list {
+  float: left;
+  overflow: hidden;
+  height: 50px;
+}
+
+#ruyitao-selector-prefix-market-list .ruyitao-selector-prefix-market-item {
+  float: left;
+  /*width: 76px;*/
+  height: 100%;
+  cursor: pointer;
+  width: 100px;
+  padding: 0 10px;
+}
+
+#ruyitao-selector-prefix-market-list .ruyitao-selector-prefix-market-item:hover, .ruyitao-selector-prefix-market-item-hl {
+  background: #f4f4f4;
+  background: -webkit-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -o-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -ms-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -moz-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: linear-gradient(180deg, #f4f4f4, #ebebeb);
+  *background: #f4f4f4;
+}
+
+.ruyitao-selector-prefix-market-name {
+  text-align: center;
+  vertical-align: bottom;
+  color: #222222;
+  height: 18px;
+  line-height: 18px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+  font-family: "微软雅黑", "Microsoft YaHei", "宋体", Verdana, Geneva, sans-serif;
+}
+.ruyitao-selector-prefix-price {
+  height: 22px;
+  line-height: 22px;
+  color: #e40000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-family: "微软雅黑", "Microsoft YaHei", "宋体", Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  margin-top: 6px;
+}
+.ruyitao-selector-prefix-market-icon {
+  width: 46px;
+  height: 100%;
+  float: left;
+}
+.ruyitao-selector-prefix-market-important,
+.ruyitao-selector-prefix-market-unimportant {
+  display: none;
+}
+
+.ruyitao-selector-prefix-price-comparation-logo {
+  float: left;
+  width: 93px;
+  height: 50px;
+  background-position: 0 -50px;
+  cursor: pointer;
+}
+
+#ruyitao-selector-prefix-current-merchant-cursor {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 8px;
+  background: url(%chrome-extension%assets/images/products/arrow-down-blue.png) center center no-repeat;
+  -background: url(%chrome-extension%assets/images/products/arrow-down-blue-8bit.png) center center no-repeat;
+}
+.ruyitao-selector-prefix-current-merchant {
+  cursor: default !important;
+}
+
+#ruyitao-selector-prefix-more-results-link {
+  float: right;
+  width: 39px;
+  padding-left: 26px;
+  height: 100%;
+  line-height: 50px;
+  cursor: pointer;
+  text-align: left;
+  color: #0082cb;
+  position: relative;
+}
+
+#ruyitao-selector-prefix-more-results-link span.ruyitao-selector-prefix-serp-list-img {
+  width: 15px;
+  height: 13px;
+  display: block;
+  background-position: -67px 0;
+  position: absolute;
+  top: 19px;
+  left: 9px;
+}
+
+#ruyitao-selector-prefix-more-results-link:hover, .ruyitao-selector-prefix-more-results-link-hl {
+  background: #f4f4f4;
+  background: -webkit-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -o-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -ms-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: -moz-linear-gradient(top, #f4f4f4, #ebebeb);
+  background: linear-gradient(180deg, #f4f4f4, #ebebeb);
+  *background: #f4f4f4;
+}
+</style>
+<div id="ruyitao-selector-prefix-serp-list" class="ruyitao-selector-prefix-serp-list-protection">
+  <div id="ruyitao-selector-prefix-serp-list-header">
+    <a class="ruyitao-selector-prefix-serp-list-logo ruyitao-selector-prefix-serp-list-img" href="http://ruyi.taobao.com/?utm_medium=ext&utm_source=ruyi" target="_blank" hidefocus="true"></a>
+    <a class="ruyitao-selector-prefix-serp-list-close ruyitao-selector-prefix-serp-list-img" href="#" hidefocus="true"></a>
+  </div>
+  <div class="ruyitao-selector-prefix-serp-list-listview"></div>
+  <div id="ruyitao-selector-prefix-serp-list-footer">
+    <a class="ruyitao-selector-prefix-serp-list-more" href="" target="_blank" hidefocus="true">查看更多</a>
+        来源<a class="ruyitao-selector-prefix-serp-list-etao ruyitao-selector-prefix-serp-list-img" href="http://www.etao.com/?tb_lm_id=ryt_ext" target="_blank" title="一淘" hidefocus="true"></a>
+  </div>
+  <div id="ruyitao-selector-prefix-serp-list-close-options">
+    <ul>
+      <li id="ruyitao-selector-prefix-serp-list-close-options-dismiss">隐藏</li>
+      <li id="ruyitao-selector-prefix-serp-list-close-options-dismiss-forever">永远隐藏</li>
+    </ul>
+  </div>
+</div>
+
+<div id="ruyitao-selector-prefix-serp-list-detail-popup">
+  <div class="ruyitao-selector-prefix-serp-list-detail-popup-top">
+    <div class="ruyitao-selector-prefix-serp-list-product-image"><a href="#" target="_blank"><img id="ruyitao-selector-prefix-serp-list-product-detail-image" /></a></div>
+    <div class="ruyitao-selector-prefix-serp-list-product-info">
+      <div id="ruyitao-selector-prefix-serp-list-product-title"><a href="#" target="_blank"></a></div>
+      <div>价格：<span id="ruyitao-selector-prefix-serp-list-detail-price"></span></div>
+      <div id="ruyitao-selector-prefix-serp-list-seller">来源：<span id="ruyitao-selector-prefix-serp-list-homepage-link"></span></div>
+      <div id="ruyitao-selector-prefix-serp-list-price-curve-wrapper">
+        <span>价格走向</span>
+        <div id="ruyitao-selector-prefix-serp-list-price-curve"></div>
+      </div>
+      <div>
+        <a id="ruyitao-selector-prefix-serp-list-buy-btn" class="ruyitao-selector-prefix-serp-list-img" href="#" target="_blank" hidefocus="true"></a><a id="ruyitao-selector-prefix-serp-list-want-btn" class="ruyitao-selector-prefix-serp-list-img" href="#" target="_blank" hidefocus="true"></a>
+      </div>
+      <div>
+        <span id="ruyitao-selector-prefix-serp-list-ivy-wants-text" class="ruyitao-selector-prefix-serp-list-saved-and-bought-info">
+          <span id="ruyitao-selector-prefix-serp-list-saved-and-bought-count" class="ruyitao-selector-prefix-serp-list-saved-and-bought-count">1920</span>人想买或买过
+        </span>
+      </div>
+    </div>
+    <div id="ruyitao-selector-prefix-serp-list-product-detail-close-btn" title="关闭" class="ruyitao-selector-prefix-serp-list-img"></div>
+  </div>
+  
+  <div class="ruyitao-selector-prefix-price-comparation-box">
+    <div id="ruyitao-selector-prefix-price-comparation-logo" class="ruyitao-selector-prefix-price-comparation-logo ruyitao-selector-prefix-logo ruyitao-selector-prefix-serp-list-img" title="如意淘 - 比价"></div>
+    <ul id="ruyitao-selector-prefix-market-list"></ul>
+    <div id="ruyitao-selector-prefix-more-results-link"><span class="ruyitao-selector-prefix-serp-list-img"></span>更多</div>
+    <div id="ruyitao-selector-prefix-current-merchant-cursor"></div>
+  </div>
+</div>

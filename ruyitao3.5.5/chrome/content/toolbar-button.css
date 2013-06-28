@@ -1,0 +1,6 @@
+#ruyitao-toolbar-button {
+    list-style-image:url("chrome://ruyitao/content/assets/icons/logo-24.png");
+}
+[iconsize="small"] #ruyitao-toolbar-button {
+    list-style-image:url("chrome://ruyitao/content/assets/icons/logo-16.png");
+}

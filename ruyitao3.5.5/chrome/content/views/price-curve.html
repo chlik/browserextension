@@ -1,0 +1,289 @@
+﻿<style type="text/css" id="ruyitao-selector-prefix-price-curve-style" class="ruyitao-selector-prefix-stylesheet ruyitao-selector-prefix-price-curve-protection">
+#ruyitao-selector-prefix-price-curve {
+  position: relative;
+  font: 12px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  width: 370px;
+  height: 26px;
+  border: 1px solid #bed0db;
+  overflow: hidden;
+  cursor: default;
+  border-radius: 3px;
+  -webkit-transition: height .5s ease-in-out;
+  -moz-transition: height .5s ease-in-out;
+  -o-transition: height .5s ease-in-out;
+  -ms-transition: height .5s ease-in-out;
+  transition: height .5s ease-in-out;
+  -webkit-user-select: none;
+  background-color: white;
+}
+
+.ruyitao-selector-prefix-price-curve-expanded {
+  height: 186px !important;
+}
+
+.ruyitao-selector-prefix-price-curve-no-data {
+  height: 60px !important;
+}
+
+#ruyitao-selector-prefix-price-curve-header {
+  height: 24px;
+  background-color: #f2f5f8;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+
+#ruyitao-selector-prefix-price-curve-title {
+  font-weight: bold;
+  color: #3695d8;
+  float: left;
+  text-shadow: 1px 1px #fff;
+  padding: 3px;
+}
+
+#ruyitao-selector-prefix-price-curve-loading {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 177px;
+  top: 5px;
+  background: transparent url(%chrome-extension%assets/images/loading.gif) left center no-repeat;
+}
+
+.ruyitao-selector-prefix-price-curve-btn {
+  cursor: pointer;
+  width: 44px;
+  height: 24px;
+  height: 24px;
+  line-height: 24px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  float: right;
+  color: #4ba7e7;
+}
+
+.ruyitao-selector-prefix-price-curve-btn:hover,
+.ruyitao-selector-prefix-price-curve-btn:active {
+  color: #fff;
+  background: transparent url(%chrome-extension%assets/images/price-curve/hover-bg.png) 0 0 repeat-x;
+}
+
+#ruyitao-selector-prefix-collapse-price-curve {
+  display: none;
+  border-left: 1px solid #fff;
+}
+
+#ruyitao-selector-prefix-share-price-curve {
+  display: none;
+  border-right: 1px solid #dae3ec;
+}
+
+#ruyitao-selector-prefix-price-curve-plot {
+  margin-left: 5px;
+  margin-top: 7px;
+  width: 280px;
+  height: 115px;
+  float: left;
+  clear: both;
+}
+
+#ruyitao-selector-prefix-price-curve-footer {
+  height: 18px;
+  width: 50px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clear: both;
+  display: none;
+}
+.ruyitao-selector-prefix-price-curve-expanded #ruyitao-selector-prefix-price-curve-footer,
+.ruyitao-selector-prefix-price-curve-no-data #ruyitao-selector-prefix-price-curve-footer {
+  display: block;
+}
+#ruyitao-selector-prefix-provider-info {
+  float: right;
+  color: #999;
+  font: 12px/1.5 '微软雅黑', 'Microsoft YaHei', Arial, Verdana, Tahoma, sans-serif,'宋体';
+  text-decoration: none;
+  width: 50px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-block;
+  text-align: center;
+  background: transparent url(%chrome-extension%assets/images/price-curve/indication-bg.png) 0 0 no-repeat;
+  -background: transparent url(%chrome-extension%assets/images/price-curve/indication-bg-8bit.png) 0 0 no-repeat;
+}
+#ruyitao-selector-prefix-provider-info:hover {
+  text-decoration: none;
+}
+
+#ruyitao-selector-prefix-price-curve-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #b89a7b;
+  border-radius: 2px;
+  background: #f3ddac;
+  background: -webkit-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -moz-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -ms-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: -o-linear-gradient(top, #f7e8c6, #f3ddac);
+  background: linear-gradient(180deg, #f7e8c6, #f3ddac);
+  background: #f3ddac\9;
+  box-shadow: 1px 1px 2px #aaa;
+  padding: 5px 8px;
+  color: black;
+  text-shadow: 1px 1px white;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  z-index: 2147483647 !important;
+  opacity: 0;
+  display:none\9;
+  zoom: 1;
+}
+
+.ruyitao-selector-prefix-tip-visible {
+  opacity: 0.9 !important;
+  display:block !important;
+}
+
+#ruyitao-selector-prefix-price-curve-arrow-down {
+  position: absolute;
+  bottom: -5px;
+  background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down.png) left top no-repeat;
+  -background: transparent url(%chrome-extension%assets/images/price-curve/arrow-down-8bit.png) left top no-repeat;
+  width: 8px;
+  height: 5px;
+  overflow: hidden;
+}
+#price_feature_div {
+  height: auto !important;
+}
+
+.ruyitao-selector-prefix-highest-price {
+  color: #e7333e;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.ruyitao-selector-prefix-lowest-price {
+  color: #090;
+  display: block;
+}
+
+/*.ruyitao-selector-prefix-follow-price {
+  display: inline-block;
+  width: 59px;
+  height: 23px;
+  overflow: hidden;
+  background: transparent url(%chrome-extension%assets/images/price-curve/follow.png) 0 0 no-repeat;
+  _background: transparent url(%chrome-extension%assets/images/price-curve/follow-8bit.png) 0 0 no-repeat;
+}
+.ruyitao-selector-prefix-follow-price:hover {
+  background-position: 0 -23px;
+}
+.ruyitao-selector-prefix-follow-price:active {
+  background-position: 0 -46px;
+}*/
+
+#ruyitao-selector-prefix-pc-price-info {
+  font-size: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#ruyitao-selector-prefix-no-price-history-info {
+  display: none;
+  color: #999;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  clear: both;
+}
+/* 解决国美overlay样式冲突  */
+#ruyitao-selector-prefix-price-curve-plot .overlay {
+  background: none;
+  opacity: 0;
+}
+
+/* 想买按钮 */
+#ruyitao-selector-prefix-price-curve-ivy-bar {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 37px;
+  border-top: 1px solid #f6f6f6;
+  text-align: center;
+  color: black;
+  font-size: 12px;
+  background-color: #fcfcfc;
+}
+
+#ruyitao-selector-prefix-price-curve-ivy-bar * {
+  vertical-align: middle;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn {
+  display: inline-block;
+  width: 60px;
+  height: 24px;
+  margin-right:10px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  background: transparent url(%chrome-extension%assets/images/ivy-want-btns.png) left top no-repeat;
+  cursor: pointer;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn:hover {
+  background-position: 0 -25px;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn:active {
+  background-position: 0 -50px;
+}
+
+.ruyitao-selector-prefix-ivy-want-btn.ruyitao-selector-prefix-bought {
+  cursor: default;
+  background-position: 0 -75px !important;
+}
+
+.ruyitao-selector-prefix-ivy-wants-count {
+  cursor: pointer;
+  margin: 0 3px;
+  color: #0082cb !important;
+  vertical-align: initial !important;
+  text-decoration: none !important;
+}
+
+#ruyitao-selector-prefix-price-curve.ruyitao-selector-prefix-price-curve-expanded.ruyitao-selector-prefix-fetch-like-count-error {
+  height: 155px !important;
+}
+
+#ruyitao-selector-prefix-price-curve.ruyitao-selector-prefix-fetch-like-count-error #ruyitao-selector-prefix-price-curve-ivy-bar {
+  display: none !important;
+}
+
+</style>
+<div id="ruyitao-selector-prefix-price-curve" class="ruyitao-selector-prefix-price-curve-protection">
+  <div id="ruyitao-selector-prefix-price-curve-header">
+    <div id="ruyitao-selector-prefix-price-curve-title">价格走向</div>
+    <span id="ruyitao-selector-prefix-price-curve-loading" title="加载中..."></span>
+    <div id="ruyitao-selector-prefix-expand-price-curve" class="ruyitao-selector-prefix-price-curve-btn">展开</div>
+    <div id="ruyitao-selector-prefix-collapse-price-curve" class="ruyitao-selector-prefix-price-curve-btn">收起</div>
+    <div id="ruyitao-selector-prefix-share-price-curve" class="ruyitao-selector-prefix-price-curve-btn">分享</div>
+  </div>
+  <div id="ruyitao-selector-prefix-no-price-history-info">当前商品暂无历史价格数据</div>
+  <div id="ruyitao-selector-prefix-price-curve-plot"></div>
+  <div id="ruyitao-selector-prefix-pc-price-info"></div>
+  <div id="ruyitao-selector-prefix-price-curve-ivy-bar">
+    <a id="ruyitao-selector-prefix-price-curve-ivy-want-btn" class="ruyitao-selector-prefix-ivy-want-btn"></a><span id="ruyitao-selector-prefix-price-curve-ivy-wants-text"></span>
+  </div>
+  <div id="ruyitao-selector-prefix-price-curve-footer">
+    <a href="http://ruyi.taobao.com/?utm_medium=ext&utm_source=ruyi" target="_blank" id="ruyitao-selector-prefix-provider-info">如意淘</a>
+  </div>
+</div>
